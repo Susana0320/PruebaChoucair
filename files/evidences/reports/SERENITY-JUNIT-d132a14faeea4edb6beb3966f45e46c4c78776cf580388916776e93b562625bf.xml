@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Module New Experince" skipped="0" tests="1" time="4.98" timestamp="2021-02-12 12:07:50"><testcase name="Purchase Flow"><error message="Unresolved compilation problems: &#10;&#9;PropertiesLoader cannot be resolved to a type&#10;&#9;PropertiesLoader cannot be resolved to a type&#10;" type="java.lang.Error">Unresolved compilation problems: 
+	PropertiesLoader cannot be resolved to a type
+	PropertiesLoader cannot be resolved to a type
+</error><system-err>Unresolved compilation problems: 
+	PropertiesLoader cannot be resolved to a type
+	PropertiesLoader cannot be resolved to a type
+&#13;
+com.co.gao.utils.maps.UrlMaps.urlInit(UrlMaps.java:19)&#13;
+com.co.gao.tasks.OpenBrowser.performAs(OpenBrowser.java:26)&#13;
+com.co.gao.stepdefinitions.CommonSteps.iWantToLoginUserToWebPageNewExperience(CommonSteps.java:45)&#13;
+cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)&#13;
+cucumber.runner.TestStep.executeStep(TestStep.java:63)&#13;
+cucumber.runner.TestStep.run(TestStep.java:49)&#13;
+cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)&#13;
+cucumber.runner.TestCase.run(TestCase.java:44)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:40)&#13;
+org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)&#13;
+org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:542)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:770)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:464)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)&#13;
+</system-err></testcase></testsuite>

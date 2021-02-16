@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Features</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                    {
+                        searching: false,
+                        ordering: false,
+                        paging: false,
+                        info: false
+                    }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"Module Protections Tests","type":"feature","href":"176dbbac6df41bd9fa2865a81311fc72f3b139a41f3e0458f8ed2231db02dd8c.html","nodes":[],"selectable":false,"tags":["","\u003cspan class\u003d\u0027feature-count\u0027\u003e1 scenario\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                showTags: true,
+                expandIcon: "glyphicon glyphicon-folder-close",
+                collapseIcon: "glyphicon glyphicon-folder-open",
+                emptyIcon: "glyphicon glyphicon-book"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Test automatization(GAO)</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+                > <a href="d27c68a5c70e853ba8d76414d106b4d1b37731f5345a0ac0c5cdd08e71bb857b.html">Protections</a>
+
+
+                > <span class="truncate-40">Module Protections Tests</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="306274588be4a83d0141672fc756f5674bc978a11388acfd90709f1d712b2c3f.html"><i class="fa fa-comments-o"></i> Modulos</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="dafb266f68444cb7f2451c923d70c1428ac45470c361842b818e6daa9bcd4fa8.html"><i class="fa fa-comments-o"></i> Themes</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 01-12-2020 11:04</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+                <div class=row">
+                    <div class="col-sm-12">
+                        <div>
+                            <div clas="table">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                    <span>
+                                            <h2><i class="fa fa-book"></i> Feature:  Module Protections Tests</h2>
+                                        </span>
+                                </div>
+                                    <div class="col-sm-4">
+                                        <span class="feature-tags">
+                                                <p class="tag">
+                                                    <span class="badge tag-badge" style="background:default;">
+                                                        <i class="fa fa-tag"></i>&nbsp;<a class="tagLink"
+                                                                                          style="background:default;"
+                                                                                          href="d27c68a5c70e853ba8d76414d106b4d1b37731f5345a0ac0c5cdd08e71bb857b.html">Protections
+                                                        (tag)</a>
+                                                    </span>
+                                                </p>
+                                                <p class="tag">
+                                                    <span class="badge tag-badge" style="background:default;">
+                                                        <i class="fa fa-tag"></i>&nbsp;<a class="tagLink"
+                                                                                          style="background:default;"
+                                                                                          href="830581ce328726a24372c4ca08d6bd732f8ad0f0f6c6cb34148407bc9b509c2f.html">Createrevision
+                                                        (tag)</a>
+                                                    </span>
+                                                </p>
+                                        </span>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="requirementNarrativeTitle">
+                                
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Requirements result tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#specs"><i class="fas fa-comments"></i> Specifications</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#results"><i class="fas fa-tachometer-alt"></i> Test Results</a>
+                        </li>
+                    </ul>
+
+                    <!-- Specifications and Results tabs -->
+                    <div class="card border">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div id="specs" class="tab-pane fade in active">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+
+                                            <h3>Scenarios</h3>
+
+                                            <div id="toc">
+                                                <table class="table" id="toc-table">
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#efa4901df195177fe3005173cf4fa2a9dd0b798581bbb64541b791b4ebf92ae3" title="View scenario details" >Enter Requirement in Module Protections with the admin role</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#1dc7717477acfed5fc91bde12e1fa044ee9fad6097e2c41d96895cdd1432149d" title="View scenario details" >Assign Analyst in Module Protections with the admin role</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#d83105d061f58a8ff23f32438b1ffece887d19f6d2aaee40c24aa94e2b0aa461" title="View scenario details" >Component Creation in Module Protections with the admin role</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#5778af709fbba8d25ab91d5d6d4a4ea1cfe9b93a1db463e36d9a60e5285e9b06" title="View scenario details" >Create Revision in Module Protections with the admin role</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="21d64cf5c7745b1d766fcd764d3ee37f30ba3e880bdb25d57890f1a6a689c0f9.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="21d64cf5c7745b1d766fcd764d3ee37f30ba3e880bdb25d57890f1a6a689c0f9.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#4af91e8a13fbc4a2fdf7fdbb145080fc878240b555f0afa7434c609573a80c79" title="View scenario details" >Edit Revision in Module Protections with the admin role</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#5f14aa31151edee7e7499435f3e3cbd3e128ac74513d8034d959d81ce9efb264" title="View scenario details" >LoadInput in Module Protections with the admin role</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#f49c3628703ffd5b30d0c8a8a7e3f9d3611c1167ec53ce1890751be238eaa876" title="View scenario details" >File Upload in Module Protections with the admin role</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#7580557db1f72b658cce1f6d19ac4f09c2b784b5721faa53cc4dc063e674e6fa" title="View scenario details" >End Stage in Module Protections with the admin role</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#3b36488c45bb32bde7dbca43bb608c05479bc04fe2412ea13873b8df4b3d8088" title="View scenario details" >Review Of Comments in Module Protections with the admin role</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                </table>
+
+                                            </div>
+
+                                            <h3>Scenario details</h3>
+
+                                                <div class="scenario-docs card" id="efa4901df195177fe3005173cf4fa2a9dd0b798581bbb64541b791b4ebf92ae3">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Enter Requirement in Module Protections with the admin role</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given I want to login admin to web page GAO</p>
+                                                            <p>When I enter Requirement</p>
+                                                            <p>Then I verify results of enter Requerement</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="1dc7717477acfed5fc91bde12e1fa044ee9fad6097e2c41d96895cdd1432149d">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Assign Analyst in Module Protections with the admin role</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given I want to login admin to web page GAO</p>
+                                                            <p>When I assign analyst in general  view module</p>
+                                                            <p>Then I verify results in general  view module</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="d83105d061f58a8ff23f32438b1ffece887d19f6d2aaee40c24aa94e2b0aa461">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Component Creation in Module Protections with the admin role</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given I want to login admin to web page GAO</p>
+                                                            <p>When I Component Creation in general view module</p>
+                                                            <p>Then I verify results Component Creation</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="5778af709fbba8d25ab91d5d6d4a4ea1cfe9b93a1db463e36d9a60e5285e9b06">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="21d64cf5c7745b1d766fcd764d3ee37f30ba3e880bdb25d57890f1a6a689c0f9.html" title="View test results">Create Revision in Module Protections with the admin role</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given I want to login admin to web page GAO</p>
+                                                            <p>When I Create Revision</p>
+                                                            <p>Then I verify results of Create Revision</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="4af91e8a13fbc4a2fdf7fdbb145080fc878240b555f0afa7434c609573a80c79">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Edit Revision in Module Protections with the admin role</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given I want to login admin to web page GAO</p>
+                                                            <p>When I Edit Revision</p>
+                                                            <p>Then I verify results of Edit Revision</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="5f14aa31151edee7e7499435f3e3cbd3e128ac74513d8034d959d81ce9efb264">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">LoadInput in Module Protections with the admin role</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given I want to login admin to web page GAO</p>
+                                                            <p>When I Load Input in the revision</p>
+                                                            <p>Then I verify results of Load Input</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="f49c3628703ffd5b30d0c8a8a7e3f9d3611c1167ec53ce1890751be238eaa876">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">File Upload in Module Protections with the admin role</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given I want to login admin to web page GAO</p>
+                                                            <p>When I File Upload in the revision</p>
+                                                            <p>Then I verify results of File Upload</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="7580557db1f72b658cce1f6d19ac4f09c2b784b5721faa53cc4dc063e674e6fa">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">End Stage in Module Protections with the admin role</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given I want to login admin to web page GAO</p>
+                                                            <p>When I End Stage in the revision</p>
+                                                            <p>Then I verify results of End Stage</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="3b36488c45bb32bde7dbca43bb608c05479bc04fe2412ea13873b8df4b3d8088">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Review Of Comments in Module Protections with the admin role</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given I want to login admin to web page GAO</p>
+                                                            <p>When I review of comments in the revision</p>
+                                                            <p>Then I verify results of review of comments</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="results" class="tab-pane fade">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <div style="width:300px;" class="chart-container automated-and-manual-results">
+                                                <div class="ct-chart ct-square"></div>
+                                            </div>
+                                            <script>
+
+                                                var labels = ['100%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
+                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                var series = [{meta: 'Passing tests (automated)', value: 1}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 0}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 0}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                // as you saw in the previous example
+                                                var options = {
+                                                    width: 350,
+                                                    height: 300
+                                                };
+
+                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                    new Chartist.Pie('.ct-chart', {
+                                                        series: series,
+                                                        labels: labels,
+                                                    }, {
+                                                        donut: true,
+                                                        donutWidth: 60,
+                                                        donutSolid: true,
+                                                        startAngle: 270,
+                                                        showLabel: true
+                                                    }, options);
+                                                });
+
+                                            </script>
+                                        </div>
+                                        <div class="col-sm-8">
+
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Scenario Results (including rows of test data)</th>
+                                                <th scope="col" colspan="2" class="automated-stats">
+                                                    Automated
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="375380360d7cf383759766937765fb58e0c5f74f428962208b9e8152774a7507.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                <td class="automated-stats">1</td>
+                                                <td class="automated-stats">100%</td>
+                                            </tr>
+                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                            <td colspan="3"><i
+                                                                                class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                            </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-times-circle failure-icon'></i>&nbsp;Failed
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr class="summary-stats">
+                                                <td class="aggregate-result-count">Total</td>
+                                                <td class="automated-stats">1</td>
+                                                <td class="automated-stats"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Execution Time</th>
+                                                        <th>Clock Time</th>
+                                                        <th>Fastest Test</th>
+                                                        <th>Slowest Test</th>
+                                                        <th>Average Execution Time</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td> 5m 36s</td>
+                                                        <td>336ms</td>
+                                                        <td> 5m 36s</td>
+                                                        <td> 5m 36s</td>
+                                                        <td> 5m 36s</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            <table class="scenario-result-table table" id="scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th class="test-name-column">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Start Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Enter Requirement in Module Protections with the admin role
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Assign Analyst in Module Protections with the admin role
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Component Creation in Module Protections with the admin role
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="21d64cf5c7745b1d766fcd764d3ee37f30ba3e880bdb25d57890f1a6a689c0f9.html">Create Revision in Module Protections with the admin role</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Edit Revision in Module Protections with the admin role
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            LoadInput in Module Protections with the admin role
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            File Upload in Module Protections with the admin role
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            End Stage in Module Protections with the admin role
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Review Of Comments in Module Protections with the admin role
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="version">Serenity BDD version 2.0.84</span>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

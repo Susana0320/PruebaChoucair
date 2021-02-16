@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Module Events Tests" skipped="0" tests="1" time="17.14" timestamp="2021-02-11 09:45:45"><testcase name="Verify report versioning with admin role"><error message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=88.0.4324.150)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-CPRMIED', ip: '192.168.12.166', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.150, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\jmorales\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: d8835803d5537bfeee30e2bc7c35c6bf&#10;*** Element info: {Using=id, value=NombreUsuario}" type="org.openqa.selenium.NoSuchWindowException">no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=88.0.4324.150)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-CPRMIED', ip: '192.168.12.166', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.150, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\jmorales\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d8835803d5537bfeee30e2bc7c35c6bf
+*** Element info: {Using=id, value=NombreUsuario}</error><system-err>no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=88.0.4324.150)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-CPRMIED', ip: '192.168.12.166', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.150, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\jmorales\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d8835803d5537bfeee30e2bc7c35c6bf
+*** Element info: {Using=id, value=NombreUsuario}&#13;
+com.co.gao.tasks.Login.performAs(Login.java:34)&#13;
+com.co.gao.stepdefinitions.postoperativo.CommonSteps.iWantToLoginAdminToWebPageGAO(CommonSteps.java:62)&#13;
+cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)&#13;
+cucumber.runner.TestStep.executeStep(TestStep.java:63)&#13;
+cucumber.runner.TestStep.run(TestStep.java:49)&#13;
+cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)&#13;
+cucumber.runner.TestCase.run(TestCase.java:44)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:40)&#13;
+org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)&#13;
+org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:542)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:770)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:464)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)&#13;
+</system-err></testcase></testsuite>
